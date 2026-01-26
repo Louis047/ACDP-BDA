@@ -1,0 +1,71 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+*.ipynb
+
+# Data files (large datasets should not be committed)
+data/*.csv
+data/*.parquet
+data/*.pkl
+data/raw/
+data/processed/
+!data/.gitkeep
+
+# Output files
+output/
+results/
+*.parquet
+*.pkl
+
+# Configuration (if contains sensitive info)
+config/local.json
+config/secrets.json
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project specific
+*.json
+!requirements.txt
+!package.json
+!tsconfig.json
+!*.config.json
