@@ -1,6 +1,113 @@
 # Adaptive Correlation-Aware Differential Privacy (ACADP)
 
+> **Team note (important):**  
+> - **Do not commit directly to `master`/`main`.** Always create a feature branch for your workflow or task.  
+> - Keep **Workflow 1–4 modules decoupled** and respect the directory structure (`src/ingestion/`, `src/correlation/`, `src/dp/`, `src/evaluation/`).  
+> - Large datasets (≥10 GB) **must not be committed** to the repo; only small samples or paths/configs should be tracked.  
+> - When adding new notebooks, put them under `notebooks/` and treat them as exploratory/prototype code; production logic must live in `src/`.
+
 A scalable, batch-oriented framework for applying Differential Privacy to structured Big Data by automatically detecting feature correlations, grouping correlated attributes into privacy blocks, and adaptively allocating privacy budgets to improve data utility while preserving formal DP guarantees.
+
+## Git Workflow for Teammates (Branching & PRs)
+
+This section explains how each teammate should work **from their own branch** and open a **pull request (PR)** to merge changes into `master` without breaking the main codebase.
+
+### 1. One-time setup (clone + install)
+
+```bash
+git clone https://github.com/<your-username>/ACDP-BDA.git
+cd ACDP-BDA
+pip install -r requirements.txt
+```
+
+### 2. Create a new branch for your work
+
+Pick a descriptive branch name for your task, for example:
+- `feature/workflow1-ingestion`
+- `feature/workflow2-correlation`
+- `feature/workflow3-dp-budget`
+- `feature/workflow4-evaluation`
+
+From inside the repo:
+
+```bash
+# Make sure you are on master and up to date
+git checkout master
+git pull origin master
+
+# Create and switch to your feature branch
+git checkout -b feature/workflow3-dp-budget
+```
+
+Now do **all your coding and commits on this feature branch**, not on `master`.
+
+### 3. Commit your changes locally
+
+After editing files:
+
+```bash
+git status          # See what changed
+git add <files>     # Or: git add .
+git commit -m "Short, clear message about the change"
+```
+
+You can commit multiple times while you work.
+
+### 4. Push your branch to GitHub
+
+```bash
+git push -u origin feature/workflow3-dp-budget
+```
+
+If this is the first push for that branch, Git will create a remote branch with the same name.
+
+### 5. Open a Pull Request (PR)
+
+1. Go to the GitHub page for the repository.  
+2. GitHub will usually show a banner like **"Compare & pull request"** for your new branch – click it.  
+3. Ensure:
+   - **Base branch**: `master`
+   - **Compare branch**: your feature branch (e.g., `feature/workflow3-dp-budget`)
+4. Fill in:
+   - **Title**: short summary (e.g., "Add DP budget allocator module")  
+   - **Description**: what you changed, which workflow it affects, any TODOs or known limitations.
+5. Click **Create pull request**.
+
+Ask at least one teammate to **review and approve** the PR before merging.
+
+### 6. Merge the PR (after review)
+
+Once the PR is approved and checks (if any) are passing:
+
+1. Use the GitHub UI to click **Merge pull request** → **Confirm merge**.  
+2. After merging, update your local `master`:
+
+```bash
+git checkout master
+git pull origin master
+```
+
+3. Optionally delete the feature branch (both on GitHub and locally) once it’s no longer needed:
+
+```bash
+git branch -d feature/workflow3-dp-budget          # delete local branch
+git push origin --delete feature/workflow3-dp-budget  # delete remote branch
+```
+
+### 7. Keeping your branch up to date (optional but recommended)
+
+If `master` has moved ahead while you are still working:
+
+```bash
+git checkout master
+git pull origin master         # get latest master
+
+git checkout feature/your-branch
+git merge master               # or: git rebase master (for advanced users)
+```
+
+Resolve any merge conflicts locally, test, then push your updated branch and continue your PR.
+
 
 ## Project Overview
 
