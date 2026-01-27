@@ -36,6 +36,7 @@ ENV/
 # Jupyter Notebooks
 .ipynb_checkpoints/
 *.ipynb
+!notebooks/*.ipynb
 
 # Data files (large datasets should not be committed)
 data/*.csv
