@@ -6,6 +6,55 @@
 > - Large datasets (≥10 GB) **must not be committed** to the repo; only small samples or paths/configs should be tracked.  
 > - When adding new notebooks, put them under `notebooks/` and treat them as exploratory/prototype code; production logic must live in `src/`.
 
+## Local development: use a virtual environment
+
+To avoid interfering with your system Python and to keep dependencies consistent across teammates, always work inside a **per-project virtual environment** when running code locally.
+
+### 1. Create and activate a virtual environment
+
+From the project root:
+
+```bash
+# Create venv (one time)
+python -m venv .venv
+
+# Windows (PowerShell)
+.venv\Scripts\Activate.ps1
+
+# macOS / Linux (bash/zsh)
+source .venv/bin/activate
+```
+
+You should see `(.venv)` at the start of your shell prompt after activation.
+
+### 2. Install dependencies into the venv
+
+With the virtualenv activated:
+
+```bash
+pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+Each teammate does this **on their own machine**; the `.venv/` folder is ignored by Git and should not be committed.
+
+### 3. Run code and tests using the venv Python
+
+Always use the `python` from the activated venv, for example:
+
+```bash
+python src/pipeline.py --input data/raw_dataset.csv --epsilon 1.0 --output data/final_privatized.parquet
+
+# Example: run the DP smoke test for Workflow 3
+python scripts/run_dp_smoketest.py
+```
+
+When you are done, you can leave the environment with:
+
+```bash
+deactivate
+```
+
 A scalable, batch-oriented framework for applying Differential Privacy to structured Big Data by automatically detecting feature correlations, grouping correlated attributes into privacy blocks, and adaptively allocating privacy budgets to improve data utility while preserving formal DP guarantees.
 
 ## Git Workflow for Teammates (Branching & PRs)
