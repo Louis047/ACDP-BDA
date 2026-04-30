@@ -88,7 +88,7 @@ def mutual_information(
         x_reshaped = x_clean.reshape(-1, 1)
         
         # Determine if target is discrete
-        y_is_discrete = discrete_y or (y_clean.dtype in [int, np.int64] and y_clean.nunique() < 20)
+        y_is_discrete = discrete_y or (y_clean.dtype in [int, np.int64] and len(np.unique(y_clean)) < 20)
         
         if y_is_discrete:
             mi = mutual_info_classif(x_reshaped, y_clean, random_state=42, discrete_features=[True])[0]

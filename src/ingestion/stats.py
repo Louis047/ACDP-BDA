@@ -129,6 +129,10 @@ def save_stats(stats: Dict[str, Any], filepath: str) -> None:
             return [convert_types(item) for item in obj]
         elif pd.api.types.is_datetime64_any_dtype(type(obj)):
             return str(obj)
+        elif hasattr(obj, 'name'):  # Handle dtype objects
+            return str(obj)
+        elif isinstance(obj, tuple):
+            return list(obj)
         else:
             return obj
     

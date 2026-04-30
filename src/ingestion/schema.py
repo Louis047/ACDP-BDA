@@ -87,7 +87,7 @@ class SchemaValidator:
                     schema[col] = 'category'
                 else:
                     schema[col] = 'str'
-            elif pd.api.types.is_categorical_dtype(dtype):
+            elif isinstance(dtype, pd.CategoricalDtype):
                 schema[col] = 'category'
             else:
                 schema[col] = str(dtype)

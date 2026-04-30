@@ -47,8 +47,6 @@ data/processed/
 !data/.gitkeep
 
 # Output files
-output/
-results/
 *.parquet
 *.pkl
 
