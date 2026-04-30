@@ -1,0 +1,62 @@
+{
+  "ACADP": {
+    "classification": {
+      "original_accuracy": 0.9436720629126081,
+      "original_f1": 0.9426592307360339,
+      "privatized_accuracy": 0.8036539806553965,
+      "privatized_f1": 0.7165808589945651,
+      "accuracy_drop": 0.14001808225721157,
+      "f1_drop": 0.22607837174146872
+    },
+    "regression": {
+      "original_rmse": 0.5925583617588467,
+      "original_mae": 0.1209588266317802,
+      "original_r2": 0.9986126290874358,
+      "privatized_rmse": 24.752573633610872,
+      "privatized_mae": 22.881040962135277,
+      "privatized_r2": -1.4208676400975064,
+      "rmse_increase": 24.160015271852025,
+      "r2_drop": 2.419480269184942
+    }
+  },
+  "Uniform": {
+    "classification": {
+      "original_accuracy": 0.9436720629126081,
+      "original_f1": 0.9426592307360339,
+      "privatized_accuracy": 0.803705156855052,
+      "privatized_f1": 0.7166303881059441,
+      "accuracy_drop": 0.13996690605755613,
+      "f1_drop": 0.2260288426300897
+    },
+    "regression": {
+      "original_rmse": 0.5925583617588467,
+      "original_mae": 0.1209588266317802,
+      "original_r2": 0.9986126290874358,
+      "privatized_rmse": 28.479304682438013,
+      "privatized_mae": 26.732658225459026,
+      "privatized_r2": -2.204712591393455,
+      "rmse_increase": 27.886746320679165,
+      "r2_drop": 3.203325220480891
+    }
+  },
+  "Random_Blocking": {
+    "classification": {
+      "original_accuracy": 0.9436720629126081,
+      "original_f1": 0.9426592307360339,
+      "privatized_accuracy": 0.8037904505211443,
+      "privatized_f1": 0.7176175996909367,
+      "accuracy_drop": 0.1398816123914638,
+      "f1_drop": 0.2250416310450971
+    },
+    "regression": {
+      "original_rmse": 0.5925583617588467,
+      "original_mae": 0.1209588266317802,
+      "original_r2": 0.9986126290874358,
+      "privatized_rmse": 25.21055922973355,
+      "privatized_mae": 23.577569641171976,
+      "privatized_r2": -1.5112808326529423,
+      "rmse_increase": 24.618000867974704,
+      "r2_drop": 2.5098934617403783
+    }
+  }
+}

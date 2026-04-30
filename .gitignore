@@ -2,69 +2,24 @@
 __pycache__/
 *.py[cod]
 *$py.class
-*.so
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-
-# Virtual environments
+.venv
 venv/
 env/
-ENV/
-.venv
 
-# IDE
+# IDEs
 .vscode/
 .idea/
 *.swp
 *.swo
-*~
 
-# Jupyter Notebooks
-.ipynb_checkpoints/
-*.ipynb
-!notebooks/*.ipynb
-
-# Data files (large datasets should not be committed)
-data/*.csv
+# Project Specific
+# Large dataset files (kept in data/ but not committed)
 data/*.parquet
-data/*.pkl
-data/raw/
-data/processed/
-!data/.gitkeep
+data/*.csv
 
-# Output files
-*.parquet
-*.pkl
-
-# Configuration (if contains sensitive info)
-config/local.json
-config/secrets.json
+# Output is REQUIRED for mentor review
+!output/
+!output/**
 
 # Logs
 *.log
-logs/
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Project specific
-*.json
-!requirements.txt
-!package.json
-!tsconfig.json
-!*.config.json
