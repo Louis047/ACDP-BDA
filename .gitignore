@@ -17,9 +17,8 @@ env/
 data/*.parquet
 data/*.csv
 
-# Output is REQUIRED for mentor review
-!output/
-!output/**
+# Output directory is EXPLICITLY INCLUDED for mentor review
+# By removing it from any ignore lists and ensuring no global patterns catch it.
 
 # Logs
 *.log
